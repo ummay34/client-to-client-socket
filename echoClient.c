@@ -44,7 +44,7 @@ main(int argc, char **argv) {
         exit(3);
     }
 
-    if((childpid == fork()) == 0){
+    if((childpid = fork()) == 0){
         while(1){
             if (recv(sockfd, recvline, MAXLINE,0) == 0){
                 //error: server terminated prematurely
